@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+    <style>
+        .container{
+            width: 50%;
+            margin: auto;
+
+        }
+        .ingreso{
+            margin-top: 150px;
+            margin-bottom: 20px;
+        }
+        .btn{
+            margin-left: 150px;
+        }
+        button{
+            margin-right: 20px;
+        }
+        .resultado{
+            margin-left: 150px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="ingreso">
+            <label for="numero1">numero 1</label>
+            <input type="text" name="numero1" id="numero1">
+            <label for="numero2">numero 2</label>
+            <input type="text" name="numero2" id="numero2">
+        </div>
+        <div class="btn">
+            <button id="suma" onclick="sumar()">+</button>
+            <button id="resta" onclick="restar()">-</button>
+            <button id="multiplicacion" onclick="multiplicar()">*</button>
+            <button id="division" onclick="dividir()">/</button>
+        </div>
+        <div class="resultado">
+            <p id="resultado"></p>
+        </div>
+    </div>
+    
+    <script>
+        var valor1=document.getElementById("numero1");
+        var valor2=document.getElementById("numero2");
+        var resultado=document.getElementById("resultado");
+
+        function sumar(){
+            var suma=parseInt(valor1.value)  + parseInt(valor2.value);
+            resultado.textContent= "El resultado es = " + suma;
+            valor1.value="";
+            valor2.value="";
+        }
+
+        function restar(){
+            var resta=parseInt(valor1.value)  - parseInt(valor2.value);
+            resultado.textContent= "El resultado es = " + resta;
+            valor1.value="";
+            valor2.value="";
+        }
+
+        function multiplicar(){
+            var multiplica=parseInt(valor1.value) * parseInt(valor2.value);
+            resultado.textContent= "El resultado es = " + multiplica;
+            valor1.value="";
+            valor2.value="";
+        }
+
+        function dividir(){
+            if(valor2.value==0){
+                var dividir = "no se puede dividir por 0";
+                valor1.value="";
+                valor2.value="";
+            }
+            else{
+                var dividir=parseInt(valor1.value)  / parseInt(valor2.value);
+                valor1.value="";
+                valor2.value="";
+            }
+            resultado.textContent= "El resultado es = " + dividir;
+        }
+    </script>
+</body>
+</html>
